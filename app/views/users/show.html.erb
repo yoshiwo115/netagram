@@ -88,10 +88,31 @@
                   <% end %>
                 </div>
               </div>
-              <div class="content">
-                <time><%= neta.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
-              </div>
             </div>
+            <div class="card-footer">
+                <div class="content">
+                  <table><tr>
+                  <th>
+                    <time><%= neta.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+                  </th>
+                  <th>   
+                    <% if user_signed_in? %>
+                      <% if current_user.already_favorited?(neta) %>
+                        <%= link_to neta_favorites_path(neta), method: :delete do %>
+                          <i class="fa fa-heart"></i>
+                        <% end %>
+                        <%= neta.favorites.count %>
+                      <% else %>
+                        <%= link_to neta_favorites_path(neta), method: :post do %>
+                          <i class="fa fa-heart-o"></i>
+                        <% end %>
+                        <%= neta.favorites.count %>
+                      <% end %>
+                    <% end %>
+                  </th>
+                  </tr></table>
+                </div>
+              </div>
           </div>
         </div>
       <% end %>

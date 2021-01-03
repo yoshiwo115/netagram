@@ -58,3 +58,5 @@ gem "refile-mini_magick"
 
 #design
 gem "bulma-rails"
+
+gem 'font-awesome-rails'
