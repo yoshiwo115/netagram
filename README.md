@@ -1,6 +1,6 @@
 # README
 
-https://yoshiwo115.github.io/netagram/home.html
+https://yoshiwo115.github.io/netagram
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
